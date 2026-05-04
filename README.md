@@ -120,9 +120,9 @@ pdflatex main.tex
 
 ## Author
 
-**Wen Dong Jiang**  
-Department of Computer Science and Information Engineering  
-Tamkang University, New Taipei City 25137, Taiwan  
+**Wen-Dong Jiang**<br>
+Department of Computer Science and Information Engineering<br>
+Tamkang University, New Taipei City 25137, Taiwan<br>
 Email: 812414018@o365.tku.edu.tw
 
 ## Repository Maintainer
