@@ -1,6 +1,8 @@
-﻿\documentclass[10pt,journal]{IEEEtran}
+\documentclass[10pt,conference,letterpaper]{IEEEtran}
 
 \usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{cite}
@@ -18,11 +20,13 @@
 
 \title{Orthogonal Transport Bootstrap Explanations for Stable Simulation-Grounded Model Interpretation}
 
-\author{Wen Dong Jiang,~\IEEEmembership{Graduate Student Member,~IEEE}%
-\thanks{Wen Dong Jiang is with the Department of Computer Science and Information Engineering, Tamkang University, New Taipei City 25137, Taiwan (e-mail: 812414018@o365.tku.edu.tw).}%
-\thanks{Additional note: this is information.}}
-
-\markboth{IEEE Double-Column Manuscript, May 2026}{Jiang: Orthogonal Transport Bootstrap Explanations}
+\author{
+\IEEEauthorblockN{Wen Dong Jiang}
+\IEEEauthorblockA{\textit{Department of Computer Science and Information Engineering}\\
+\textit{Tamkang University}\\
+New Taipei City 25137, Taiwan\\
+812414018@o365.tku.edu.tw}
+}
 
 \maketitle
 
@@ -294,20 +298,6 @@ A third extension is modality-specific validation.  For images, transported coal
 
 Finally, \method{} should be tested with human-facing workflows.  Stability is valuable only if it improves decisions.  A user study could ask whether analysts debug models more consistently when explanations include bootstrap intervals and stable top-feature sets.  Such a study would connect the present simulation evidence to the broader goal of trustworthy model interpretation.
 
-\section{Internal Review and Revision Record}
-
-Before finalizing the manuscript, an internal reviewer simulation was conducted using three reviewer perspectives.  Reviewer A focused on novelty and technical soundness, Reviewer B focused on experiment rigor and reproducibility, and Reviewer C focused on writing, positioning, and page-level clarity.  The first-round decision was ``major revision'' because the initial draft overemphasized overall superiority even though the evidence showed a more specific stability advantage.  The paper was revised to state the claim more narrowly: \method{} is a stability-oriented explainer that remains competitive on recovery and fidelity, not a universal winner on every metric.
-
-The second review round raised three remaining issues.  First, the manuscript needed to explain what was learned from Example1 rather than merely cite PEXP.  This was addressed by adding the source-paper reading section and the transfer table.  Second, the reviewer requested exact metric definitions so that the simulation could be audited without reading the code.  This was addressed by adding the top-$k$ Jaccard, stability, RMSE, and spurious-mass equations.  Third, the reviewer asked whether the bootstrap intervals should be interpreted causally.  The revision now states explicitly that the intervals are procedural uncertainty estimates under the chosen sampling design.
-
-The final simulated editorial decision is ``accept with minor editorial risk.''  The remaining risk is external validity: the paper is intentionally simulation-only.  That risk is disclosed in the threats-to-validity section and is not hidden by stronger language in the abstract or conclusion.  The editor judged that the manuscript is internally consistent because the method, experiment code, figures, tables, and final claims all point to the same bounded contribution.
-
-\section{Reproducibility Checklist}
-
-This checklist records the evidence needed to regenerate the main claims.  The source file \texttt{run\_experiments.py} defines the synthetic tasks, black-box functions, explanation baselines, metrics, statistical tests, and plot generation.  The output manifest records the fixed seed, task names, method names, and expected artifacts.  The raw per-instance results are stored in the raw metrics CSV; the aggregated method results are stored in the summary CSV; and the paired tests are stored in the statistics CSV.
-
-The main manuscript imports the generated tables rather than hand-copying the numerical values.  Therefore, rerunning the experiment script followed by recompiling the paper updates the numerical evidence consistently.  The figures \texttt{main\_metrics.pdf}, \texttt{scenario\_recovery.pdf}, and \texttt{runtime\_stability.pdf} are generated from the same CSV outputs.  This structure reduces the risk that a table, figure, and textual claim silently disagree.
-
 \section{Conclusion}
 
 This paper proposed \method{}, an orthogonal transport bootstrap explainer designed for stable simulation-grounded model interpretation under feature dependence.  Building on the perturbation and stability motivation of PEXP, the method replaces image-specific perturbation with transported coalition sampling, adds a conservative covariance correction, and aggregates explanations through bootstrap repetitions.  Simulation experiments with known feature contributions show that \method{} achieves the strongest repeated-run stability while preserving competitive fidelity and top-$k$ recovery.  The evidence supports \method{} as a stability-oriented explanation method rather than a universal accuracy winner, and the accompanying code provides a reproducible basis for future extensions to image, graph, and multimodal settings.
@@ -319,5 +309,3 @@ This manuscript is a local simulation study prepared for methodological explorat
 \bibliography{references}
 
 \end{document}
-
-

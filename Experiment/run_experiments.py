@@ -518,7 +518,17 @@ def write_latex_tables(method_summary: pd.DataFrame, scenario_summary: pd.DataFr
 
 
 def make_plots(method_summary: pd.DataFrame, scenario_summary: pd.DataFrame) -> None:
-    plt.rcParams.update({"font.size": 8, "axes.spines.top": False, "axes.spines.right": False})
+    plt.rcParams.update(
+        {
+            "font.family": "serif",
+            "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
+            "font.size": 8,
+            "pdf.fonttype": 42,
+            "ps.fonttype": 42,
+            "axes.spines.top": False,
+            "axes.spines.right": False,
+        }
+    )
     main = method_summary[method_summary["method"].isin(MAIN_METHODS)].copy()
     main["order"] = main["method"].map({m: i for i, m in enumerate(MAIN_METHODS)})
     main = main.sort_values("order")

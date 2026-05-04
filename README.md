@@ -10,16 +10,16 @@ The project proposes **OTBE**, a simulation-grounded explanation method that com
 
 ```text
 .
-├── Experiment/
-│   ├── run_experiments.py        # End-to-end simulation benchmark
-│   ├── figures/                  # Generated paper figures
-│   └── results/                  # CSV metrics, LaTeX tables, manifest
-├── review/
-│   └── simulated_review_rounds.md
-├── main.tex                      # IEEE double-column manuscript source
-├── main.pdf                      # Compiled 8-page manuscript
-├── references.bib                # 42 cited references
-└── README.md
+|-- Experiment/
+|   |-- run_experiments.py        # End-to-end simulation benchmark
+|   |-- figures/                  # Generated paper figures
+|   `-- results/                  # CSV metrics, LaTeX tables, manifest
+|-- review/
+|   `-- simulated_review_rounds.md
+|-- main.tex                      # IEEE conference manuscript source
+|-- main.pdf                      # Compiled manuscript
+|-- references.bib                # 42 cited references
+`-- README.md
 ```
 
 ## Quick Start
