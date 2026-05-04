@@ -1,0 +1,45 @@
+{
+  "seed": 20260504,
+  "n_rows": 480,
+  "scenarios": [
+    "SparseAdd",
+    "CorrBias",
+    "Interact",
+    "GroupNonlin"
+  ],
+  "main_methods": [
+    "LIME-R",
+    "KernelSHAP",
+    "PEXP-Sim",
+    "RealExp-O",
+    "HBS-Shapley",
+    "TIDE",
+    "OTBE"
+  ],
+  "ablation_methods": [
+    "OTBE-noTransport",
+    "OTBE-noOrthogonal",
+    "OTBE-noBootstrap",
+    "OTBE"
+  ],
+  "best_rmse": {
+    "method": "KernelSHAP",
+    "rmse": 0.1051229044357216
+  },
+  "best_stability": {
+    "method": "OTBE",
+    "stability": 0.9194444444444444
+  },
+  "outputs": [
+    "results/raw_instance_metrics.csv",
+    "results/scenario_metrics.csv",
+    "results/summary_metrics.csv",
+    "results/stat_tests.csv",
+    "results/main_results.tex",
+    "results/ablation_results.tex",
+    "results/stat_tests.tex",
+    "figures/main_metrics.pdf",
+    "figures/scenario_recovery.pdf",
+    "figures/runtime_stability.pdf"
+  ]
+}

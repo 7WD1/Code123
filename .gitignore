@@ -1,0 +1,30 @@
+# LaTeX build outputs
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Local render checks
+render_check/
+main_text_check.txt
+compile*.log
+bibtex_clean.log
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment folders
+.venv/
+venv/
+env/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
